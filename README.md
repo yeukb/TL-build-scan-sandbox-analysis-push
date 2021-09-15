@@ -34,7 +34,7 @@ Reference: https://docs.paloaltonetworks.com/prisma/prisma-cloud/21-08/prisma-cl
 
 
 ## Note
-On point 4 above,
+1.  On point 4 above,
     - Dockerfile.pass and /init-pass.sh should be used when a sandbox analysis pass is desired.
     - Dockerfile.fail and /init-fail.sh should be used when a sandbox analysis fail is desired.
  
