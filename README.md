@@ -29,6 +29,7 @@ Reference: https://docs.paloaltonetworks.com/prisma/prisma-cloud/21-08/prisma-cl
     - dockerfile (e.g. default vaule: Dockerfile.fail)
 5. Create credentials:
     - twistlock_creds - username/password used to access Prisma Cloud Compute console (Sandbox user)
+    - docker_creds - username/password to login to docker registry
 6. Build with Parameters
 
 
