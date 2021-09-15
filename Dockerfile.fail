@@ -1,0 +1,5 @@
+FROM nginx:1.21.3-alpine
+RUN apk --update add curl ca-certificates
+COPY ./init-fail.sh /
+RUN chmod +x /init-fail.sh
+ENTRYPOINT ["/init-fail.sh"]

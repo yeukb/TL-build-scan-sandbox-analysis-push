@@ -1,0 +1,5 @@
+FROM nginx:1.21.3-alpine
+RUN apk --update add curl ca-certificates
+COPY ./init-pass.sh /
+RUN chmod +x /init-pass.sh
+ENTRYPOINT ["/init-pass.sh"]
