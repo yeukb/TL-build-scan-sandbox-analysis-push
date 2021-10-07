@@ -6,7 +6,7 @@ Reference: https://docs.paloaltonetworks.com/prisma/prisma-cloud/21-08/prisma-cl
 
 
 ## Prerequisites
-1. Setup a Jenkins slave and sandbox VM
+1.  Setup a Jenkins slave and sandbox VM
     - https://docs.paloaltonetworks.com/prisma/prisma-cloud/21-08/prisma-cloud-compute-edition-admin/runtime_defense/image_analysis_sandbox.html#_setup_the_sandbox_machine
     - or by using the following terraform templates
         - https://github.com/yeukb/TL-sandbox-vm
@@ -14,10 +14,12 @@ Reference: https://docs.paloaltonetworks.com/prisma/prisma-cloud/21-08/prisma-cl
 2.  Install and configure Prisma Cloud Compute Jenkins plugin
     - https://docs.paloaltonetworks.com/prisma/prisma-cloud/21-08/prisma-cloud-compute-edition-admin/continuous_integration/jenkins_plugin.html
 
+3.  SSH key pair for logging in to the Sandbox VM
+
 
 ## Jenkins configuration
 1. Add a slave to Jenkins
-    - require docker, git, java and twistcli
+    - use the Sandbox VM as Jenkins slave (require docker, git, java and twistcli to be installed)
 2. Create a pipeline project
 3. Configure the pipeline project to use pipeline script from SCM (Git)
     - https://github.com/yeukb/TL-build-scan-sandbox-analysis-push
@@ -30,6 +32,7 @@ Reference: https://docs.paloaltonetworks.com/prisma/prisma-cloud/21-08/prisma-cl
 5. Create credentials:
     - twistlock_creds - username/password used to access Prisma Cloud Compute console (Sandbox user)
     - docker_creds - username/password to login to docker registry
+    - ssh_key_for_slave - SSH username with private key (for Jenkins to connect to the salve)
 6. Build with Parameters
 
 
